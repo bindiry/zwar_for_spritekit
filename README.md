@@ -9,4 +9,4 @@ ZWar Game for SpriteKit
 - 干掉的怪物达到30个，将会胜利
 - 如果怪物成功移动到屏幕左侧，则会失败
 
-
+![屏幕截图](https://raw.github.com/bindiry/ZWar_for_SpriteKit/master/screenshot.png)
