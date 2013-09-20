@@ -7,6 +7,7 @@
 //
 
 #import "SLMyScene.h"
+#import "SLResultScene.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface SLMyScene()
@@ -15,6 +16,7 @@
 @property (nonatomic, strong) NSMutableArray *projectiles;
 @property (nonatomic, strong) SKAction *projectileSoundEffectAction;
 @property (nonatomic, strong) AVAudioPlayer *bgmPlayer;
+@property (nonatomic, assign) int monsterDestroyed;
 
 @end
 
@@ -85,6 +87,8 @@
     SKAction *actionMoveDone = [SKAction runBlock:^{
         [monster removeFromParent];
         [self.monsters removeObject:monster];
+        // 切换到结果场景，显示失败
+        [self changeToResultSceneWithWon:NO];
     }];
     // 设置动作依次执行
     [monster runAction:[SKAction sequence:@[actionMove, actionMoveDone]]];
@@ -155,6 +159,12 @@
         {
             [self.monsters removeObject:monster];
             [monster removeFromParent];
+            
+            self.monsterDestroyed++;
+            if (self.monsterDestroyed >= 30) {
+                // 切换到结果场景，显示胜利
+                [self changeToResultSceneWithWon:YES];
+            }
         }
         // 如果删除列表中的怪物数大于0，则表示当前这个飞镖碰到了怪物
         // 也需要加入删除列表进行删除
@@ -167,6 +177,18 @@
         [self.projectiles removeObject:projectile];
         [projectile removeFromParent];
     }
+}
+
+-(void) changeToResultSceneWithWon:(BOOL)won
+{
+    [self.bgmPlayer stop];
+    self.bgmPlayer = nil;
+    SLResultScene *resultScene = [[SLResultScene alloc] initWithSize:self.size won:won];
+    SKTransition *reveal = [SKTransition
+                            revealWithDirection:SKTransitionDirectionUp
+                            duration:1.0
+                            ];
+    [self.scene.view presentScene:resultScene transition:reveal];
 }
 
 @end

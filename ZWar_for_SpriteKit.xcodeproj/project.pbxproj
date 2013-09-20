@@ -10,6 +10,7 @@
 		110AB27017EC004800F2C5FF /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 110AB26E17EC004800F2C5FF /* background-music-aac.caf */; };
 		110AB27117EC004800F2C5FF /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = 110AB26F17EC004800F2C5FF /* pew-pew-lei.caf */; };
 		110AB27317EC018800F2C5FF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 110AB27217EC018800F2C5FF /* AVFoundation.framework */; };
+		1164C39B17EC15A90071DAB5 /* SLResultScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 1164C39A17EC15A90071DAB5 /* SLResultScene.m */; };
 		11CF61A217EB41670040C817 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CF61A117EB41670040C817 /* Foundation.framework */; };
 		11CF61A417EB41670040C817 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CF61A317EB41670040C817 /* CoreGraphics.framework */; };
 		11CF61A617EB41670040C817 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CF61A517EB41670040C817 /* UIKit.framework */; };
@@ -42,6 +43,8 @@
 		110AB26E17EC004800F2C5FF /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
 		110AB26F17EC004800F2C5FF /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
 		110AB27217EC018800F2C5FF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1164C39917EC15A90071DAB5 /* SLResultScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLResultScene.h; sourceTree = "<group>"; };
+		1164C39A17EC15A90071DAB5 /* SLResultScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLResultScene.m; sourceTree = "<group>"; };
 		11CF619E17EB41670040C817 /* ZWar_for_SpriteKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZWar_for_SpriteKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CF61A117EB41670040C817 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		11CF61A317EB41670040C817 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,6 +141,8 @@
 				11CF61BC17EB41670040C817 /* SLMyScene.m */,
 				11CF61C017EB41680040C817 /* Images.xcassets */,
 				11CF61AA17EB41670040C817 /* Supporting Files */,
+				1164C39917EC15A90071DAB5 /* SLResultScene.h */,
+				1164C39A17EC15A90071DAB5 /* SLResultScene.m */,
 			);
 			path = ZWar_for_SpriteKit;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1164C39B17EC15A90071DAB5 /* SLResultScene.m in Sources */,
 				11CF61B017EB41670040C817 /* main.m in Sources */,
 				11CF61BD17EB41670040C817 /* SLMyScene.m in Sources */,
 				11CF61BA17EB41670040C817 /* SLViewController.m in Sources */,

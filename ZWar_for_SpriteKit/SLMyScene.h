@@ -10,4 +10,6 @@
 
 @interface SLMyScene : SKScene
 
+- (instancetype)initWithSize:(CGSize)size;
+
 @end
