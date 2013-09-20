@@ -17,6 +17,7 @@
 @property (nonatomic, strong) SKAction *projectileSoundEffectAction;
 @property (nonatomic, strong) AVAudioPlayer *bgmPlayer;
 @property (nonatomic, assign) int monsterDestroyed;
+@property (nonatomic, strong) SKLabelNode *monsterKilledLabel;
 
 @end
 
@@ -28,6 +29,13 @@
         self.monsters = [NSMutableArray array];
         self.projectiles = [NSMutableArray array];
         self.projectileSoundEffectAction = [SKAction playSoundFileNamed:@"pew-pew-lei.caf" waitForCompletion:NO];
+        self.monsterDestroyed = 0;
+        self.monsterKilledLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        self.monsterKilledLabel.text = [NSString stringWithFormat:@"%d", self.monsterDestroyed];
+        self.monsterKilledLabel.fontSize = 25;
+        self.monsterKilledLabel.fontColor = [SKColor blackColor];
+        self.monsterKilledLabel.position = CGPointMake(25, 10);
+        [self addChild:self.monsterKilledLabel];
         
         // 1. 设置背景颜色
         self.backgroundColor = [SKColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
@@ -161,6 +169,7 @@
             [monster removeFromParent];
             
             self.monsterDestroyed++;
+            self.monsterKilledLabel.text = [NSString stringWithFormat:@"%d", self.monsterDestroyed];
             if (self.monsterDestroyed >= 30) {
                 // 切换到结果场景，显示胜利
                 [self changeToResultSceneWithWon:YES];
